@@ -29,5 +29,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ## Notes for me
 
 npm i angular-cli-ghpages --save-dev
+
 ng build --configuration production --base-href "https://maksim-volkmann.github.io/angular-dota-api/"
+
 npx angular-cli-ghpages --dir=dist/angular-dota-api

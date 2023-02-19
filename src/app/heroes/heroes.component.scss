@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css?family=ZCOOL+QingKe+HuangYou');
+
+$shadow: #000;
+$dark-shadow: #000;
+
+.allHeroPool {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  .heroBackground {
+    font-family: 'ZCOOL QingKe HuangYou', cursive;
+    width: 149px;
+    height: 84px;
+    background-size: cover;
+    border-radius: 10px;
+    box-shadow: 2px 6px $shadow;
+    transition-duration: 0.3s;
+    margin-right: 3px;
+    filter: brightness(90%);
+  }
+
+  .allHeroPoolContainer {
+    position: relative;
+    margin-bottom: 10px;
+    margin-left: 2px;
+    &:hover {
+      .heroName {
+        transform: translateY(5px);
+      }
+      .heroBackground {
+        box-shadow: 2px 3px $dark-shadow;
+        transform: translateY(5px);
+        filter: sepia(90%) brightness(100%);
+      }
+    }
+    &:active {
+      .heroName {
+        transform: translateY(10px);
+      }
+      .heroBackground {
+        box-shadow: 0px 0px;
+        transform: translateY(10px);
+      }
+    }
+
+    .heroName {
+      position: absolute;
+      font-family: 'ZCOOL QingKe HuangYou', cursive;
+      font-size: 18px;
+      bottom: 5px;
+      left: 8px;
+      color: #fff;
+      z-index: 1;
+      transition-duration: 0.3s;
+    }
+  }
+}
+
+
+
+// .axe {
+//   background-image: url('https://api.opendota.com/apps/dota2/images/heroes/axe_full.png');
+// }
+
+// .snap {
+//   background-image: url('https://api.opendota.com/apps/dota2/images/heroes/snapfire_full.png');
+// }
+
+// .chen {
+//   background-image: url('https://api.opendota.com/apps/dota2/images/heroes/chen_full.png');
+// }
