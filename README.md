@@ -4,7 +4,7 @@ This is project is based on [Angular](https://angular.io/) and it's for learning
 
 ## Live version
 
-Live version can be found [here.](https://maksim-volkmann.github.io/angular-dota-api/)
+Live version can be found <a href="https://maksim-volkmann.github.io/angular-dota-api/" target="_blank">here.</a>
 
 ## Progress
  - [x] Fetch data from the API.
@@ -13,4 +13,6 @@ Live version can be found [here.](https://maksim-volkmann.github.io/angular-dota
  - [x] Add filters by main hero attribute
  - [ ] Add routes
  - [ ] Add single hero page
+ 
+ Progress list is not complete. More progress tasks will be added soon.
 
