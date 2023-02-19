@@ -21,5 +21,4 @@ export class FilterComponent {
     // console.log(this.selectedInputValue)
   }
 
-
 }

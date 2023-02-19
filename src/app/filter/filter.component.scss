@@ -1,10 +1,39 @@
-.filter-container{
-  display:flex;
+.filter-container {
+  display: flex;
+  align-items: center;
   justify-content: center;
-  color: #fff;
-  font-size: 25px;
-
-  .input-name{
-    padding-right: 30px;
-  }
+  padding-bottom: 30px;
 }
+
+.filter-container span {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.filter-container label {
+  font-family: 'ZCOOL QingKe HuangYou', cursive;
+  display: inline-flex;
+  align-items: center;
+  margin-right: 10px;
+  padding: 10px;
+  border-radius: 4px;
+  background-color: #008cff;
+  color: #333;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.filter-container input[type="radio"] {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.filter-container label:hover {
+  background-color: #e25853;
+  color: #fff;
+}
+
+// .filter-container input[type="radio"]:checked+label{ background-color: #FFA500;}

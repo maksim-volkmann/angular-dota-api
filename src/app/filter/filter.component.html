@@ -1,23 +1,38 @@
 <div class="filter-container">
-  <span>Filter: </span>
+  <!-- <span>Filter: </span> -->
+  
+  <div class="filter-inner"> 
+    <label>
+    <input type="radio" name="filter" value="All" 
+    [(ngModel)]="selectedInputValue"
+    (change)="onChangeFilterSelectedInputValue()">
+    {{'All Heroes( '+all+' )'}}</label>
+  </div>
 
-  <input type="radio" name="filter" value="All" 
-  [(ngModel)]="selectedInputValue"
-  (change)="onChangeFilterSelectedInputValue()">
-  <span class="input-name">{{'All Heroes('+all+')'}}</span>
+  <div class="filter-inner"> 
+    <label>
+      <input type="radio" name="filter" value="str" 
+        [(ngModel)]="selectedInputValue"
+        (change)="onChangeFilterSelectedInputValue()">
+      {{'Strength Heroes( '+str+' )'}}
+    </label>
+  </div>
   
-  <input type="radio" name="filter" value="str" 
-  [(ngModel)]="selectedInputValue"
-  (change)="onChangeFilterSelectedInputValue()">
-  <span class="input-name">{{'Strength Heroes('+str+')'}}</span>
-  
-  <input type="radio" name="filter" value="agi" 
-  [(ngModel)]="selectedInputValue"
-  (change)="onChangeFilterSelectedInputValue()">
-  <span class="input-name">{{'Agility Heroes('+agi+')'}}</span>
-  
-  <input type="radio" name="filter" value="int" 
-  [(ngModel)]="selectedInputValue"
-  (change)="onChangeFilterSelectedInputValue()">
-  <span class="input-name">{{'Intelligent Heroes('+int+')'}}</span>
+  <div class="filter-inner">
+    <label>
+      <input type="radio" name="filter" value="agi" 
+      [(ngModel)]="selectedInputValue"
+      (change)="onChangeFilterSelectedInputValue()">
+      {{'Agility Heroes( '+agi+' )'}}
+    </label>
+  </div>
+
+  <div class="filter-inner">
+    <label>
+      <input type="radio" name="filter" value="int" 
+      [(ngModel)]="selectedInputValue"
+      (change)="onChangeFilterSelectedInputValue()">
+      {{'Intelligent Heroes( '+int+' )'}}
+    </label>
+  </div>
 </div>

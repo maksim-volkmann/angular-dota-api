@@ -1,20 +1,5 @@
-<!-- <div class="heroes">
-  <div class="hero" *ngFor="let hero of heroes">
-    <img
-      src="https://api.opendota.com{{ hero.img }}"
-      alt="{{ hero.localized_name }}"
-      width="64"
-      height="36"
-    />
-    <span class="name">{{ hero.localized_name }}</span>
-  </div>
-</div> -->
+<h1>OPEN DOTA API - DOTA 2 HEROES DISPLAYED</h1>
 
-<!-- <img
-  src="https://api.opendota.com/apps/dota2/images/dota_react/heroes/antimage.png?"
-  alt=""
-/> -->
-<!-- <h1>WELCOME TO THE OPEN DOTA API</h1> -->
 <app-search (searchQuery)="onSearchTextEntered($event)"></app-search>
 <app-filter 
   [all]="getTotalHeroCount()" 
@@ -29,13 +14,11 @@
   <ng-container *ngFor="let hero of heroes">
       <ng-container *ngIf="heroCountRadioButton === 'All' || heroCountRadioButton === hero.primary_attr">
       <a href="#" class="allHeroPoolContainer" *ngIf="searchText === '' || hero.localized_name.toLowerCase().includes(searchText)">
-        <!-- <ng-container > -->
           <span class="heroName">{{ hero.localized_name }}</span>
           <div class="heroBackground"
             [ngStyle]="{'background-image': 
             'url(https://api.opendota.com' +  hero.img + ' )'}"
           ></div>
-      <!-- </ng-container> -->
       </a>
     </ng-container>
   </ng-container>
