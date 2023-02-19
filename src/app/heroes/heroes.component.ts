@@ -20,6 +20,29 @@ export class HeroesComponent {
     })
   }
 
+  getTotalHeroCount(){
+    return this.heroes.length
+  }
+
+  getStrHeroCount(){
+    return this.heroes.filter(hero => hero.primary_attr === 'str').length
+  }
+
+  getAgiHeroCount(){
+    return this.heroes.filter(hero => hero.primary_attr === 'agi').length
+  }
+
+  getIntHeroCount(){
+    return this.heroes.filter(hero => hero.primary_attr === 'int').length
+  }
+
+  heroCountRadioButton: string = 'All'
+
+  onChangeFilterSelectedInputValue(data: string){
+    this.heroCountRadioButton = data
+  }
+  
+
   searchText: string = ''
 
   onSearchTextEntered(value: string){

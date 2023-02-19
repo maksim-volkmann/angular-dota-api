@@ -1,0 +1,23 @@
+<div class="filter-container">
+  <span>Filter: </span>
+
+  <input type="radio" name="filter" value="All" 
+  [(ngModel)]="selectedInputValue"
+  (change)="onChangeFilterSelectedInputValue()">
+  <span class="input-name">{{'All Heroes('+all+')'}}</span>
+  
+  <input type="radio" name="filter" value="str" 
+  [(ngModel)]="selectedInputValue"
+  (change)="onChangeFilterSelectedInputValue()">
+  <span class="input-name">{{'Strength Heroes('+str+')'}}</span>
+  
+  <input type="radio" name="filter" value="agi" 
+  [(ngModel)]="selectedInputValue"
+  (change)="onChangeFilterSelectedInputValue()">
+  <span class="input-name">{{'Agility Heroes('+agi+')'}}</span>
+  
+  <input type="radio" name="filter" value="int" 
+  [(ngModel)]="selectedInputValue"
+  (change)="onChangeFilterSelectedInputValue()">
+  <span class="input-name">{{'Intelligent Heroes('+int+')'}}</span>
+</div>
