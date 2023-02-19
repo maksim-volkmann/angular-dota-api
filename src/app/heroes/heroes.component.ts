@@ -9,7 +9,6 @@ import { ApiService } from '../api.service'
 })
 export class HeroesComponent {
 
-
   heroes: any[] = []
 
   constructor(private ApiService: ApiService){}
@@ -20,4 +19,12 @@ export class HeroesComponent {
       console.log(data)
     })
   }
+
+  searchText: string = ''
+
+  onSearchTextEntered(value: string){
+    this.searchText = value
+    console.log(this.searchText)
+  }
+
 }

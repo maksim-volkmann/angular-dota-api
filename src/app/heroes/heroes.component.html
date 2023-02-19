@@ -15,12 +15,18 @@
   alt=""
 /> -->
 <!-- <h1>WELCOME TO THE OPEN DOTA API</h1> -->
+<app-search (searchQuery)="onSearchTextEntered($event)"></app-search>
+<br>
 <div class="allHeroPool">
-  <a href="#" class="allHeroPoolContainer" *ngFor="let hero of heroes">
-    <span class="heroName">{{ hero.localized_name }}</span>
-    <div class="heroBackground"
-      [ngStyle]="{'background-image': 
-      'url(https://api.opendota.com' +  hero.img + ' )'}"
-    ></div>
+  <ng-container *ngFor="let hero of heroes">
+  <a href="#" class="allHeroPoolContainer" *ngIf="searchText === '' || hero.localized_name.toLowerCase().includes(searchText)">
+    <!-- <ng-container > -->
+      <span class="heroName">{{ hero.localized_name }}</span>
+      <div class="heroBackground"
+        [ngStyle]="{'background-image': 
+        'url(https://api.opendota.com' +  hero.img + ' )'}"
+      ></div>
+  <!-- </ng-container> -->
   </a>
+</ng-container>
 </div>

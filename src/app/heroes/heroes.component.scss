@@ -23,7 +23,7 @@ $dark-shadow: #000;
   .allHeroPoolContainer {
     position: relative;
     margin-bottom: 10px;
-    margin-left: 2px;
+    padding-left: 2px;
     &:hover {
       .heroName {
         transform: translateY(5px);
