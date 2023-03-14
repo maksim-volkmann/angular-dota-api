@@ -1,13 +1,15 @@
 <div *ngIf="hero">
 
-  <h2>{{hero.name | uppercase}} Details</h2>
-  <div><span>id: </span>{{hero.id}}</div>
-  <div>
-    <label for="hero-name">Hero name: </label>
-    <input id="hero-name" [(ngModel)]="hero.name" placeholder="name">
-  </div>
-
+  <img src="https://api.opendota.com{{hero.img}}" alt="img here">
+  <h2>{{hero.localized_name | uppercase}}</h2>
+  <div><span>ID: </span>{{hero.id}}</div>
+  <div>Roles: {{hero.roles}}</div>
+  <br>
+  <div>Base Health: {{hero.base_health}} {{hero.base_str}}</div>
+  <div>Base Health Regen: {{hero.base_health_regen}}</div>
+  <br>
+  <div>Base Mana: {{hero.base_mana}}</div>
+  <div>Base Mana Regen: {{hero.base_mana_regen}}</div>
+  
+  <div>{{getH()}}</div>
 </div>
-
-<span>hero solo</span>
-<span>{{hero}}</span>

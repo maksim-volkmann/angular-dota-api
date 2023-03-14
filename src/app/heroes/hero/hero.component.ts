@@ -24,5 +24,9 @@ export class HeroComponent implements OnInit{
   console.log(id)
  }
 
+ getH(){
+  return this.hero.base_health + (this.hero.base_str * 20)
+ }
+
 
 }
