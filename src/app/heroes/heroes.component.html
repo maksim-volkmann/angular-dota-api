@@ -14,7 +14,10 @@
 <div class="allHeroPool">
   <ng-container *ngFor="let hero of heroes">
       <ng-container *ngIf="heroCountRadioButton === 'All' || heroCountRadioButton === hero.primary_attr">
-      <a href="#" class="allHeroPoolContainer" *ngIf="searchText === '' || hero.localized_name.toLowerCase().includes(searchText)">
+      <a routerLink="/hero/{{hero.id}}"
+      class="allHeroPoolContainer" 
+      *ngIf="searchText === '' || hero.localized_name.toLowerCase().includes(searchText)"
+      (click)="displayHeroDetail(hero)">
           <span class="heroName">{{ hero.localized_name }}</span>
           <div class="heroBackground"
             [ngStyle]="{'background-image': 
@@ -24,4 +27,9 @@
     </ng-container>
   </ng-container>
 </div>
+
+<!-- <div *ngIf="selectedHero">
+  <h2>{{ selectedHero.localized_name }}</h2>
+  <p>{{ selectedHero.primary_attr}}</p>
+</div> -->
 

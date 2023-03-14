@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ApiService } from 'src/app/api.service';
 
@@ -7,18 +7,22 @@ import { ApiService } from 'src/app/api.service';
   templateUrl: './hero.component.html',
   styleUrls: ['./hero.component.scss']
 })
-export class HeroComponent implements OnInit {
+export class HeroComponent implements OnInit{
 
-  hero:any
-  heroName:any
+  constructor( private activatedRoute: ActivatedRoute, private apiService: ApiService){}
 
-  constructor(private activatedRoute: ActivatedRoute, private ApiService: ApiService){}
+  @Input() hero: any
 
   ngOnInit(): void {
-      // this.heroName = this.activatedRoute.snapshot.paramMap.get('name')
-      // this.ApiService.getHeroes().subscribe((data: any[]) => {
-      //   console.log(`single hero component: ${data}` )
-      // })
+    this.getHero()
   }
+
+ getHero(): void{
+  // console.log(this.activatedRoute.snapshot.paramMap.get('id'))
+  const id = Number(this.activatedRoute.snapshot.paramMap.get('id'))
+  this.apiService.getHeroById(id).subscribe(hero => (this.hero = hero));
+  console.log(id)
+ }
+
 
 }

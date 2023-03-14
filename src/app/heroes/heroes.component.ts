@@ -50,4 +50,10 @@ export class HeroesComponent {
     console.log(this.searchText)
   }
 
+  selectedHero?: any
+  displayHeroDetail(hero: any){
+    this.selectedHero = hero
+  }
+
+
 }

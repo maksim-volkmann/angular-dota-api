@@ -16,7 +16,7 @@ const appRoute: Routes = [
   // {path: '', redirectTo: '', pathMatch: 'full'},
   {path: '', component: HeroesComponent},
   // {path: 'home', component: FilterComponent},
-  {path: 'Hero/:name', component: HeroComponent},
+  {path: 'hero/:id', component: HeroComponent},
   {path: '**', component: ErrorComponent}
 ]
 
