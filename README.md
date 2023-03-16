@@ -16,3 +16,12 @@ Live version can be found <a href="https://maksim-volkmann.github.io/angular-dot
  
  Progress list is not complete. More progress tasks will be added soon.
 
+ ## Dev
+
+ Commands for developer.
+```javascript
+npm i angular-cli-ghpages --save-dev
+ng build --configuration production --base-href "https://maksim-volkmann.github.io/angular-dota-api/" 
+npx angular-cli-ghpages --dir=dist/angular-dota-api
+```
+
