@@ -1,15 +1,77 @@
 <div *ngIf="hero">
 
-  <img src="https://api.opendota.com{{hero.img}}" alt="img here">
-  <h2>{{hero.localized_name | uppercase}}</h2>
+  <div class="center">
+    <img src="https://api.opendota.com{{hero.img}}" alt="hero img">
+    <h2>{{hero.localized_name | uppercase}}</h2>
+    <div class="roles">{{hero.roles.join(' | ')}}</div>
+  </div>
+<div class="stats">
+  <div class="stats-box">
+    <div class="name">Strengh</div>
+    <ng-template [ngIf]="hero.primary_attr === 'str'">
+      <div class="stat-info">
+        <div class="stat-info-name">Damage</div>
+        <div class="stat-info-value">{{hero.base_str}}</div>
+      </div>
+    </ng-template>
+    <div class="stat-info">
+      <div class="stat-info-name">Health</div>
+      <div class="stat-info-value">{{getBaseHealth()}}</div>
+    </div>
+    <div class="stat-info">
+      <div class="stat-info-name">Health Regen</div>
+      <div class="stat-info-value">{{getHealthRegen()}}</div>
+    </div>
+  </div>
+
+
+  <div class="stats-box">
+    <div class="name">Agility</div>
+    <ng-template [ngIf]="hero.primary_attr === 'agi'">
+      <div class="stat-info">
+        <div class="stat-info-name">Damage</div>
+        <div class="stat-info-value">{{hero.base_agi}}</div>
+      </div>
+    </ng-template>
+    <div class="stat-info">
+      <div class="stat-info-name">Armor</div>
+      <div class="stat-info-value">{{getArmor()}}</div>
+    </div>
+    <div class="stat-info">
+      <div class="stat-info-name">Attack speed</div>
+      <div class="stat-info-value">{{getAttackSpeed()}}</div>
+    </div>
+  </div>
+
+  <div class="stats-box">
+    <div class="name">Intelligence</div>
+    <ng-template [ngIf]="hero.primary_attr === 'int'">
+      <div class="stat-info">
+        <div class="stat-info-name">Damage</div>
+        <div class="stat-info-value">{{hero.base_int}}</div>
+      </div>
+    </ng-template>
+    <div class="stat-info">
+      <div class="stat-info-name">Health</div>
+      <div class="stat-info-value">{{getBaseHealth()}}</div>
+    </div>
+    <div class="stat-info">
+      <div class="stat-info-name">Health Regen</div>
+      <div class="stat-info-value">{{getHealthRegen()}}</div>
+    </div>
+  </div>
+
+
+
+
   <div><span>ID: </span>{{hero.id}}</div>
   <div>Roles: {{hero.roles}}</div>
   <br>
-  <div>Base Health: {{hero.base_health}} {{hero.base_str}}</div>
+  <div>Base Health: {{hero.base_health}}</div>
   <div>Base Health Regen: {{hero.base_health_regen}}</div>
   <br>
   <div>Base Mana: {{hero.base_mana}}</div>
   <div>Base Mana Regen: {{hero.base_mana_regen}}</div>
   
-  <div>{{getH()}}</div>
+  <!-- <div>{{getH()}}</div> -->
 </div>
