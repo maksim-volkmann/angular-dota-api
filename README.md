@@ -11,8 +11,8 @@ Live version can be found <a href="https://maksim-volkmann.github.io/angular-dot
  - [x] Display all heroes on the page. Name, image.
  - [x] Add search by hero name
  - [x] Add filters by main hero attribute
- - [ ] Add routes
- - [ ] Add single hero page
+ - [x] Add routes
+ - [x] Add single hero page
  
  Progress list is not complete. More progress tasks will be added soon.
 
