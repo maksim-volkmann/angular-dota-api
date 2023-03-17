@@ -1,4 +1,4 @@
-<div *ngIf="hero">
+<div class="hero-page" *ngIf="hero">
 
   <div class="center">
     <img src="https://api.opendota.com{{hero.img}}" alt="hero img">
@@ -7,7 +7,13 @@
   </div>
 <div class="stats">
   <div class="stats-box">
-    <div class="name">Strengh</div>
+    <div class="attr-name">
+      <img class="attr-icon" src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/icons/hero_strength.png" alt="" srcset="">
+      <h3>Strength</h3>
+      <ng-template [ngIf]="hero.primary_attr === 'str'">
+        <span class="primary-attr" [ngStyle]="{'color': 'rgb(224, 57, 6)'}">Primary</span>
+      </ng-template>
+      </div>
     <ng-template [ngIf]="hero.primary_attr === 'str'">
       <div class="stat-info">
         <div class="stat-info-name">Damage</div>
@@ -26,7 +32,13 @@
 
 
   <div class="stats-box">
-    <div class="name">Agility</div>
+    <div class="attr-name">
+      <img class="attr-icon" src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/icons/hero_agility.png" alt="" srcset="">
+      <h3>Agility</h3>
+      <ng-template [ngIf]="hero.primary_attr === 'agi'">
+        <span class="primary-attr" [ngStyle]="{'color': 'rgb(36, 224, 46)'}">Primary</span>
+      </ng-template>
+    </div>
     <ng-template [ngIf]="hero.primary_attr === 'agi'">
       <div class="stat-info">
         <div class="stat-info-name">Damage</div>
@@ -44,7 +56,13 @@
   </div>
 
   <div class="stats-box">
-    <div class="name">Intelligence</div>
+    <div class="attr-name">
+      <img class="attr-icon" src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/icons/hero_intelligence.png" alt="" srcset="">
+      <h3>Intelligence</h3>
+      <ng-template [ngIf]="hero.primary_attr === 'int'">
+        <span class="primary-attr" [ngStyle]="{'color': 'rgb(0, 161, 219)'}">Primary</span>
+      </ng-template>
+    </div>
     <ng-template [ngIf]="hero.primary_attr === 'int'">
       <div class="stat-info">
         <div class="stat-info-name">Damage</div>
@@ -61,17 +79,60 @@
     </div>
   </div>
 
+  <div class="stats-box">
+    <div class="attr-name">
+      <img class="attr-icon" src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react//heroes/stats/icon_damage.png" alt="" srcset="">
+      <h3>Attack</h3>
+    </div>
+    <div class="stat-info">
+      <div class="stat-info-name">Damage</div>
+      <div class="stat-info-value">{{hero.base_attack_min}} - {{hero.base_attack_max}}</div>
+    </div>
+    <div class="stat-info">
+      <div class="stat-info-name">Attack Range</div>
+      <div class="stat-info-value">{{hero.attack_range}}</div>
+    </div>
+  </div>
 
+  <div class="stats-box">
+    <div class="attr-name">
+      <img class="attr-icon" src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react//heroes/stats/icon_armor.png" alt="" srcset="">
+      <h3>Defense</h3>
+    </div>
+    <div class="stat-info">
+      <div class="stat-info-name">Armor</div>
+      <div class="stat-info-value">{{getArmor()}}</div>
+    </div>
+    <div class="stat-info">
+      <div class="stat-info-name">Physical Resistance</div>
+      <div class="stat-info-value">{{getPsysicalResistance()}}</div>
+    </div>
+    <div class="stat-info">
+      <div class="stat-info-name">Magical Resistance</div>
+      <div class="stat-info-value">25%</div>
+    </div>
+  </div>
 
+  <div class="stats-box">
+    <div class="attr-name">
+      <img class="attr-icon" src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react//heroes/stats/icon_movement_speed.png" alt="" srcset="">
+      <h3>Mobility</h3>
+    </div>
+    <div class="stat-info">
+      <div class="stat-info-name">Move Speed</div>
+      <div class="stat-info-value">{{hero.move_speed}}</div>
+    </div>
+    <div class="stat-info">
+      <div class="stat-info-name">Turn rate</div>
+      <div class="stat-info-value">{{getTurnRate()}}</div>
+    </div>
+    <div class="stat-info">
+      <div class="stat-info-name">Vision Range</div>
+      <div class="stat-info-value">{{hero.day_vision}}/{{hero.night_vision}}</div>
+    </div>
+  </div>
 
-  <div><span>ID: </span>{{hero.id}}</div>
-  <div>Roles: {{hero.roles}}</div>
-  <br>
-  <div>Base Health: {{hero.base_health}}</div>
-  <div>Base Health Regen: {{hero.base_health_regen}}</div>
-  <br>
-  <div>Base Mana: {{hero.base_mana}}</div>
-  <div>Base Mana Regen: {{hero.base_mana_regen}}</div>
-  
-  <!-- <div>{{getH()}}</div> -->
+  <a routerLink="../.." class="back-button">Go Back</a>
+
+</div>
 </div>

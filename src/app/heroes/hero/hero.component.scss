@@ -1,35 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Sono:wght@300&display=swap');
+
 *{
   color: #fff;
-}
-
-.center{
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  flex-direction: column;
-  align-items: center;
+  font-family: 'ZCOOL QingKe HuangYou', cursive;
 }
 
 
-.stats{
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  padding-top: 30px;
 
-  .stats-box{
-    border: 1px solid #34495e;
-    border-radius: 10px;
-    padding: 10px 20px;
-    min-width: 300px;
+.hero-page{
+  max-width: 1200px;
+  margin: 0 auto;
+
+  .center{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .stats{
+    display: inline-flex;
+    width: 100%;
+    padding-top: 30px;
+    gap: 50px;
+    flex-wrap: wrap;
     margin-bottom: 30px;
-    background-color: #34495e;
-
-    .stat-info{
-      display: flex;
-      justify-content: space-between;
-      color: rgba(255, 255, 255, 0.36);
+  
+    .stats-box{
+      // flex-basis: 33.333333%;
+      border: 1px solid #34495e;
+      border-radius: 10px;
+      padding: 10px 20px;
+      min-width: 300px;
+      background-color: #34495e;
+  
+      .attr-name{
+        display: flex;
+        align-items: center;
+        padding-bottom: 8px;
+  
+        .attr-icon{
+          width: 25px;
+          padding-right: 10px;
+        }
+  
+        h3{
+         margin: 0; 
+        }
+  
+        .primary-attr{
+          font-family: 'Sono', sans-serif;
+          margin-left: 20px;
+          padding: 3px 5px;
+          background-color: rgb(54 54 54);
+          font-size: 12px;
+        }
+  
+      }
+  
+  
+      .stat-info{
+        display: flex;
+        justify-content: space-between;
+        color: rgba(255, 255, 255, 0.36);
+      }
     }
+  }
+  .back-button {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #c00;
+    border-radius: 4px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+  }
+  .back-button:hover {
+    background-color: #a30000;
+  }
+  .back-button:active {
+    background-color: #830000;
   }
 }
 

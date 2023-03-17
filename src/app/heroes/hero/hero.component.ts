@@ -61,8 +61,22 @@ export class HeroComponent implements OnInit{
   return Math.floor((this.hero.base_int * 0.05) * 10) / 10
  }
 
+ getPsysicalResistance(){
+  const armor =  Math.floor(((this.hero.base_agi / 6) + (this.hero.base_armor)) * 10) / 10
+  return Math.round((0.052 * armor) / (0.9 + 0.048 * armor) * 100) + '%'
+ }
+
+ getTurnRate(){
+  if(this.hero.turn_rate === null){
+    return 0.6
+  }else{
+    return this.hero.turn_rate
+  }
+ }
+
 }
 
+// 0,208 3,792
 
 // (Intelligence Growth × (Current Level - 1) ➜ rounded down) + Base Intelligence + Bonus Intelligence × 12 = Mana from Intelligence + 75 Base Mana = Total Mana
 
