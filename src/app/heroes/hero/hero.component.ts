@@ -30,7 +30,7 @@ export class HeroComponent implements OnInit{
 
  getHealthRegen(){
 	// return Math.round((this.hero.base_health_regen + (this.hero.base_str * 0.1)) * 10) / 10
-	return (Math.floor((this.hero.base_health_regen + (this.hero.base_str * 0.1)) * 10) / 10).toFixed(1)
+	return (Math.floor((this.hero.base_health_regen + (this.hero.base_str * 0.1)) * 10) / 10)
  }
 
  getRoles(){
@@ -41,7 +41,8 @@ export class HeroComponent implements OnInit{
  }
 
  getArmor(){
-	return (this.hero.base_agi / 6) + (this.hero.base_armor)
+	// return Math.floor((this.hero.base_agi / 6) + (this.hero.base_armor) * 10) / 10
+  return Math.floor(((this.hero.base_agi / 6) + (this.hero.base_armor)) * 10) / 10
  }
 
  getAttackSpeed(){
@@ -50,6 +51,14 @@ export class HeroComponent implements OnInit{
 	} else{
 		return Math.floor((this.hero.base_attack_time + this.hero.base_agi) * (1.7 / this.hero.attack_rate))
 	}
+ }
+
+ getMaxManaPool(){
+  return (this.hero.base_int * 12) + this.hero.base_mana
+ }
+
+ getManaRegen(){
+  return Math.floor((this.hero.base_int * 0.05) * 10) / 10
  }
 
 }
