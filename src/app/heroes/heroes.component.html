@@ -1,10 +1,10 @@
 <h1>OPEN DOTA API - DOTA 2 HEROES DISPLAYED</h1>
 
 <app-search (searchQuery)="onSearchTextEntered($event)"></app-search>
-<app-filter 
-  [all]="getTotalHeroCount()" 
-  [str]="getStrHeroCount()" 
-  [agi]="getAgiHeroCount()" 
+<app-filter
+  [all]="getTotalHeroCount()"
+  [str]="getStrHeroCount()"
+  [agi]="getAgiHeroCount()"
   [int]="getIntHeroCount()"
   (filterSelectedInputValue)="onChangeFilterSelectedInputValue($event)">
 </app-filter>
@@ -15,13 +15,13 @@
   <ng-container *ngFor="let hero of heroes">
       <ng-container *ngIf="heroCountRadioButton === 'All' || heroCountRadioButton === hero.primary_attr">
       <a routerLink="/hero/{{hero.id}}"
-      class="allHeroPoolContainer" 
+      class="allHeroPoolContainer"
       *ngIf="searchText === '' || hero.localized_name.toLowerCase().includes(searchText)"
       (click)="displayHeroDetail(hero)">
           <span class="heroName">{{ hero.localized_name }}</span>
           <div class="heroBackground"
-            [ngStyle]="{'background-image': 
-            'url(https://api.opendota.com' +  hero.img + ' )'}"
+            [ngStyle]="{'background-image':
+            'url(https://steamcdn-a.akamaihd.net/' +  hero.img + ' )'}"
           ></div>
       </a>
     </ng-container>
